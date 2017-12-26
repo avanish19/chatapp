@@ -14,12 +14,16 @@ var io = socketIO(server);
 io.on('connection',(socket)=>{
 	console.log("New user connected");
 	
-    // socket.emit('newEmail',{
-    // 	from:'avanish@gm.com',
-    // 	text:'whats going on',
-    // 	createdAt:123
-    // }); 
-
+    socket.emit('newEmail',{
+    	from:'Admin',
+    	text:'Welcome',
+    	createdAt:new Date().getTime()
+    }); 
+    socket.broadcast.emit('newMessage',{
+    	from:'Admin',
+    	text:'New user joined',
+    	createdAt:new Date().getTime()
+    });
     // socket.emit('newMessage',{
     // 	from:'ashdkh@khjksahdhi.com',
     // 	text:'dshifyiwerhcbhsjguyb bn',
@@ -30,11 +34,11 @@ io.on('connection',(socket)=>{
        	console.log('createMessage',message);
         
 
-        io.emit('newMessage',{
-       	from:message.from,
-       	text:message.text,
-       	createdAt:new Date().getTime()
-       });
+       //  io.emit('newMessage',{
+       // 	from:message.from,
+       // 	text:message.text,
+       // 	createdAt:new Date().getTime()
+       // });
        });
        
     // socket.on('createEmail',(newEmail)=>{
