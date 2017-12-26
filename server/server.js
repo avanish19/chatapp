@@ -10,20 +10,23 @@ const express = require('express');
 const app = express();
 const server = http.createServer(app);
 var io = socketIO(server);
+const {generateMessage} = require('./utils/message');
 
 io.on('connection',(socket)=>{
 	console.log("New user connected");
 	
-    socket.emit('newEmail',{
-    	from:'Admin',
-    	text:'Welcome',
-    	createdAt:new Date().getTime()
-    }); 
-    socket.broadcast.emit('newMessage',{
-    	from:'Admin',
-    	text:'New user joined',
-    	createdAt:new Date().getTime()
-    });
+    // socket.emit('newEmail',{
+    // 	from:'Admin',
+    // 	text:'Welcome',
+    // 	createdAt:new Date().getTime()
+    // }); 
+    socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
+    // socket.broadcast.emit('newMessage',{
+    // 	from:'Admin',
+    // 	text:'New user joined',
+    // 	createdAt:new Date().getTime()
+    // });
+    socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
     // socket.emit('newMessage',{
     // 	from:'ashdkh@khjksahdhi.com',
     // 	text:'dshifyiwerhcbhsjguyb bn',
@@ -32,6 +35,7 @@ io.on('connection',(socket)=>{
 
        socket.on('createMessage',(message)=>{
        	console.log('createMessage',message);
+       	io.emit('newMessage', generateMessage(message.from, message.text));
         
 
        //  io.emit('newMessage',{
