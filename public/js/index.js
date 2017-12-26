@@ -6,10 +6,6 @@ var socket = io();
 			// 	text:'Holjdsklfljjljlwqouoruoijhclxa'
 			// });
 
-			socket.emit('createMessage',{
-				to:'xyz@xyz.com',
-				text:'axsdlxlkeojlspwpep'
-			});
 		});
 
 		socket.on('newMessage',(message)=>{
