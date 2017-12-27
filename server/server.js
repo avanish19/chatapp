@@ -10,7 +10,7 @@ const express = require('express');
 const app = express();
 const server = http.createServer(app);
 var io = socketIO(server);
-const {generateMessage} = require('./utils/message');
+const {generateMessage,generateLocationMessage} = require('./utils/message');
 
 io.on('connection',(socket)=>{
 	console.log("New user connected");
@@ -52,6 +52,12 @@ io.on('connection',(socket)=>{
     // socket.on('createMessage',(message)=>{
     // 	console.log('created message',message);
     // });
+
+    socket.on('createLocationMessage',(coords)=>{
+      io.emit('newLocationMessage',generateLocationMessage('Admin',coords.latitude,coords.longitude));
+      // io.emit('newMessage',generateMessage('Admin',`${coords.latitude},${coords.longitude}`));
+    });
+ 
 	socket.on('disconnect',()=>{
 	console.log("User disconnected");
 });

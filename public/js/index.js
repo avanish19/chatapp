@@ -43,3 +43,30 @@ var socket = io();
 			});
 
 		});
+
+		socket.on('newLocationMessage',function(message){
+			var li= jQuery('<li></li>');
+			var a = jQuery('<a target="_blank">My current location</a>');
+			li.text(`${message.from}`);
+			a.attr('href',message.url);
+			li.append(a);
+			jQuery('#messages').append(li);
+		});
+
+		var myLocation = jQuery('#send-location');
+
+		myLocation.on('click', function(){
+			if(!navigator.geolocation){
+				console.log('your browser is not supported');
+			}
+
+			navigator.geolocation.getCurrentPosition(function(position){
+				socket.emit('createLocationMessage',{
+					latitude:position.coords.latitude,
+					longitude:position.coords.longitude
+				});
+			},function(){
+				alert('Unable to fetch your location');
+			}
+			);
+		});
