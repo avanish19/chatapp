@@ -33,10 +33,10 @@ io.on('connection',(socket)=>{
     // 	createdAt:123143425436
     // });
 
-       socket.on('createMessage',(message)=>{
+       socket.on('createMessage',(message,callback)=>{
        	console.log('createMessage',message);
-       	io.emit('newMessage', generateMessage(message.from, message.text));
-        
+       	io.emit('newMessage', generateMessage(message.from,message.text));
+         callback('This is from  the server');// data sent from server
 
        //  io.emit('newMessage',{
        // 	from:message.from,

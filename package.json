@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/server.js",
     "test": "mocha server/**/*.test.js",
-    "test-watch":"nodemon --exec 'mpm test'"
+    "test-watch": "nodemon --exec 'mpm test'"
   },
   "engines": {
     "node": "7.7.3"
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "socket.io": "^2.0.4",
     "socket.io.users": "^2.0.2"
   },
