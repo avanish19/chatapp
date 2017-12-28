@@ -1,0 +1,102 @@
+.mynaviagtion {
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0b3367cf;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+
+
+.mynaviagtion a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: red;
+    display: block;
+    transition: 0.3s;
+}
+
+.mynaviagtion a:hover {
+    color: #f1f1f1;
+}
+
+.mynaviagtion .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+.dem{
+	position: fixed;
+bottom:2%;
+width:95%;
+float:left;
+}
+input[type=text]{
+	width: 80%;
+    padding: 12px;
+    border: 1px solid #7cce107d;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: horizontal;
+    background-color: #ffffff3b;
+}
+
+button{
+
+	background-color:#0b3367cf;
+	 padding: 12px;
+    border: 1px solid #7cce107d;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+button:hover{
+	background-color: white;
+}
+@media (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+h1{
+	color: white;
+	float: right;
+}
+
+h1:hover{
+	color: red;
+}
+form{
+	width: 90%;
+}
+/*.den{
+	position: fixed;
+bottom:5%;
+float: left;
+
+}*/
+/*
+input::placeholder{
+	float:right;
+	color: #0b3367cf;
+}*/
