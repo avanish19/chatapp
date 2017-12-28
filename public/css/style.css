@@ -100,3 +100,32 @@ input::placeholder{
 	float:right;
 	color: #0b3367cf;
 }*/
+
+sub {
+	color:#0b3367cf;
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sub:hover{
+	color:blue ;
+}
+
+.message{
+
+    border: 2px solid #dedede;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width:auto;
+}
+.message1{
+
+    border: 2px solid #dedede;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width:auto;
+}
