@@ -41,6 +41,20 @@ function scrollToBottom () {
 			scrollToBottom();
 		});
 
+		socket.on('connect',function(){
+			var params = jQuery.deparam(window.location.search);
+			socket.emit('join',params,function(err){//create join listener in server.js
+				if(err){
+					alert(err);
+					window.location.href='/';
+
+				}else{
+					console.log('no error');
+
+				}
+			});
+		});
+
 		socket.on('disconnect',function(){
 			console.log('disconnected to server');
 		});

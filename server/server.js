@@ -11,9 +11,17 @@ const app = express();
 const server = http.createServer(app);
 var io = socketIO(server);
 const {generateMessage,generateLocationMessage} = require('./utils/message');
-
+const {isRealstring} = require('./utils/validation');
 io.on('connection',(socket)=>{
 	console.log("New user connected");
+
+  socket.on('join',(params,callback)=>{
+    if(!isRealstring(params.Dname) || !isRealstring(params.jrname)){
+      callback('Name and Room name are required');
+    }
+    callback();
+
+  });
 	
     // socket.emit('newEmail',{
     // 	from:'Admin',

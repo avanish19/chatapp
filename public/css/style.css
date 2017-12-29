@@ -42,7 +42,8 @@
 }
 
 .dem{
-	position:fixed;
+	position:sticky;
+	    margin-top: auto;
 bottom:2%;
 width:95%;
 float:left;
