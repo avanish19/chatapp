@@ -6,7 +6,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #0b3367cf;
+    background-color: #af8c6d57;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -38,10 +38,11 @@
 #main {
     transition: margin-left .5s;
     padding: 16px;
+   
 }
 
 .dem{
-	position: fixed;
+	position:fixed;
 bottom:2%;
 width:95%;
 float:left;
@@ -55,7 +56,7 @@ input[type=text]{
     margin-top: 6px;
     margin-bottom: 16px;
     resize: horizontal;
-    background-color: #ffffff3b;
+    background-color: #ffffffba;
 }
 
 button{
@@ -129,3 +130,32 @@ sub:hover{
     margin: 10px 0;
     width:auto;
 }
+ /******************************index****************************************************************/
+   body{
+   	background-image: url('/sun.jpg');
+   	background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   }
+
+   .fieldset{
+   	width: 250px;
+   	height: auto;
+   	background-color: #d6d6ea40;
+   	padding-left: 4px;
+   	padding-right: 4px;
+   	padding-bottom: 30px;
+   	padding-bottom: 20px;
+   	margin-top: 250px;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   .cp{
+   	text-align: center;
+    color: #04010e;
+   }
+
+   #cdiv{
+   	    padding-left: 50px;
+   }
