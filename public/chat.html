@@ -7,12 +7,14 @@
 </head>
 <body>
 	<div id="naviagtion" class="mynaviagtion">
+		<div id="People"><h1><p>People</p></h1></div>
 
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<h1>People</h1>
+		
+		<div id="navigate"></div>
 	</div>
 	<div id="main" class="aMain">
-		<p><span style="font-size:30px;cursor:pointer; color: #fff;" onclick="openNav()">&#9776;</span></p>
+		<p><span style="font-size:30px;cursor:pointer; color: #fff; position: sticky;" onclick="openNav()">&#9776;</span></p>
 <p style=" color: #fff">Welcome to ChatApp</p>
 	<ol id="messages"></ol>
 	<div class="dem">
@@ -36,7 +38,7 @@
 		
 
 	</script>
-	<script id="location-template">
+	<script id="location-template" type=" text/template">
 		<div class="message">
 		<div class="messagetitle">
 		{{from}}
@@ -51,10 +53,11 @@
 	</script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="/js/libs/jquery-3.2.1.min.js"></script>
-	<script src="/js/index.js"></script>
+	
 	<script src="/js/libs/moment.js"></script>
 	<script src="/js/libs/mustache.js"></script>
 	<script src="/js/libs/deparam.js"></script>
+	<script src="/js/index.js"></script>
 	<script>
 function openNav() {
     document.getElementById("naviagtion").style.width = "250px";
