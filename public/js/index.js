@@ -36,6 +36,18 @@ function scrollToBottom() {
 				}
 			});
 		});
+		socket.on('disconnect',function(){
+			console.log('disconnected to server');
+		});
+
+		socket.on('updateUserList', function(users){
+          // console.log('UserList',users);
+          var navi = jQuery('<ul></ul>');
+          users.forEach(function(user){
+          	navi.append(jQuery('<li></li>').text(user));
+          });
+          jQuery('#navigate').html(navi);
+         });
 
 		socket.on('newMessage',(message)=>{
 			var formattedTime = moment(message.createdAt).calendar();
@@ -56,22 +68,13 @@ function scrollToBottom() {
 
 		
 
-		socket.on('disconnect',function(){
-			console.log('disconnected to server');
-		});
-		socket.on('updateUserList', function(users){
-          // console.log('UserList',users);
-          var navi = jQuery('<ul></ul>');
-          users.forEach(function(user){
-          	navi.append(jQuery('<li></li>').text(user));
-          });
-          jQuery('#navigate').html(navi);
-         });
+		
+		
 
 
-		socket.on('newEmail',function(email){
-			console.log('New email',email);
-		});
+		// socket.on('newEmail',function(email){
+		// 	console.log('New email',email);
+		// });
 
 		// socket.emit('createMessage',{
 		// 	from:'Avanish',
